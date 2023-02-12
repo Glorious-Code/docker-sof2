@@ -14,10 +14,8 @@ WORKDIR /home/docker
 
 RUN apt update && apt install libz1 libncurses5 -qy && apt clean && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /home/docker/base
 RUN mkdir /home/docker/pb
 
-COPY --chown=docker base/* /home/docker/base/
 COPY --chown=docker pb/* /home/docker/pb/
 COPY --chown=docker sof2ded /home/docker/
 COPY --chown=docker start.sh /home/docker/
